@@ -1,0 +1,11 @@
+.github/
+.vscode/
+node_modules/
+
+package.json
+
+coverage/
+build/
+public/
+
+README.md
