@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Routes from './routes';
-import { GlobalStyle, Theme } from './theme';
+import Routes from 'src/routes';
+import { GlobalStyle, Theme } from 'src/theme';
 
 const App = () => {
   return (

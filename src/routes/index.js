@@ -1,7 +1,16 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-const Routes = () => {
-  return <div>Routes</div>;
+import { Home } from 'src/views';
+
+const Hahah = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" title="Home" element={<Home />} />
+      </Routes>
+    </Router>
+  );
 };
 
-export default Routes;
+export default Hahah;
