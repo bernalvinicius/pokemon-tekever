@@ -10,12 +10,14 @@ export const PokemonCard = {
   `,
 
   Content: styled.div`
-    border: 1px solid red;
+    border: 1px solid ${props => props.theme.palette.colors.grey};
     display: flex;
     justify-content: splace-between;
     align-items: center;
     width: 100%;
     max-width: 300px;
+    padding: 5px;
+    border-radius: 5px;
   `,
 
   Cover: styled.div`
