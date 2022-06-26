@@ -1,3 +1,4 @@
 import Layout from './Layout';
+import PokemonCard from './PokemonCard';
 
-export { Layout };
+export { Layout, PokemonCard };
