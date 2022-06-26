@@ -1,32 +1,23 @@
-import React, { useContext, useState } from 'react';
-import axios from 'axios';
+import React, { useContext } from 'react';
 import { Grid } from '@material-ui/core';
 
-import { Layout, PokemonCard } from 'src/components';
+import { Layout, Pagination, PokemonCard } from 'src/components';
 import { AppContext } from 'src/providers';
-import { getPokemons, getPokeSprites } from 'src/services/api';
+import { GetAllPokemons } from 'src/services/data';
 
 import { Home as S } from './styles';
 
 const Home = () => {
-  const { setData } = useContext(AppContext);
-  const [pokemons, setPokemons] = useState([]);
+  const { data, setData } = useContext(AppContext);
 
   React.useEffect(() => {
-    const getAllPokemons = async () => {
-      const { data } = await getPokemons();
-
-      const pokemon = await axios.all(
-        data.results.map(pokemon =>
-          getPokeSprites(pokemon.url).then(pk => pk.data),
-        ),
-      );
+    const getPokemons = async () => {
+      const { data, pokemon } = await GetAllPokemons();
 
       setData(prev => ({ ...prev, pokemons: data, types: pokemon }));
-      setPokemons(pokemon);
     };
 
-    getAllPokemons();
+    getPokemons();
   }, []);
 
   return (
@@ -34,14 +25,18 @@ const Home = () => {
       <S.Content>
         <S.Container>
           <Grid container spacing={4}>
-            {pokemons.map(pokemon => (
-              <PokemonCard
-                key={pokemon.id}
-                name={pokemon.name}
-                cover={pokemon.sprites.front_default}
-              />
-            ))}
+            {data.types &&
+              data.types.map(pokemon => (
+                <PokemonCard
+                  key={pokemon.id}
+                  name={pokemon.name}
+                  cover={pokemon.sprites.front_default}
+                />
+              ))}
           </Grid>
+          <S.Pagination>
+            <Pagination />
+          </S.Pagination>
         </S.Container>
       </S.Content>
     </Layout>

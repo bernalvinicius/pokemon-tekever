@@ -11,4 +11,10 @@ export const Home = {
   Container: styled.div`
     max-width: 90%;
   `,
+
+  Pagination: styled.div`
+    display: flex;
+    justify-content: flex-end;
+    margin: 30px;
+  `,
 };
