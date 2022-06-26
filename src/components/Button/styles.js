@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const Button = {
   Container: styled.button`
-    background-color: ${props => props.theme.palette.colors.pink};
+    background-color: ${({ disabled }) => (!disabled ? '#f11f76' : '#ccc')};
     border: none;
     border-radius: 0.5rem;
     color: ${props => props.theme.palette.colors.white};
-    cursor: pointer;
+    cursor: ${({ disabled }) => (!disabled ? 'pointer' : 'not-allowed')};
     display: inline-block;
     font-weight: 400;
     font-size: 1.8rem;
@@ -22,7 +22,7 @@ export const Button = {
     }
 
     &:hover {
-      filter: brightness(110%);
+      filter: ${({ disabled }) => (!disabled ? 'brightness(110%)' : '')};
     }
   `,
 };

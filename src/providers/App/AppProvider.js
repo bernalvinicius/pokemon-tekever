@@ -7,6 +7,7 @@ const defaultState = {
   favorite: '',
   pokemons: [],
   types: [],
+  loading: false,
 };
 
 export const AppProvider = ({ children }) => {

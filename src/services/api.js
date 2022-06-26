@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://pokeapi.co/api/v2';
+const BASE_URL = 'https://pokeapi.co/api/v2/pokemon';
 
-export const getPokemons = () => axios.get(`${BASE_URL}/pokemon`);
+export const getPokemons = (url = BASE_URL) => axios.get(url);
 
 export const getPokeSprites = url => axios.get(url);

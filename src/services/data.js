@@ -2,8 +2,8 @@ import axios from 'axios';
 
 import { getPokemons, getPokeSprites } from './api';
 
-export const GetAllPokemons = async () => {
-  const { data } = await getPokemons();
+export const GetAllPokemons = async url => {
+  const { data } = await getPokemons(url);
 
   const pokemon = await axios.all(
     data.results.map(pokemon =>
