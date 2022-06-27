@@ -16,5 +16,23 @@ export const Home = {
     display: flex;
     justify-content: flex-end;
     margin: 30px;
+    padding-bottom: 50px;
+  `,
+
+  ContentLabel: styled.div`
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  `,
+
+  Label: styled.span`
+    display: block;
+    font-size: 35px;
+    color: ${props => props.theme.palette.colors.white};
+    text-align: initial;
+    padding-left: 20px;
+    text-transform: capitalize;
+    text-decocartion: underline;
   `,
 };

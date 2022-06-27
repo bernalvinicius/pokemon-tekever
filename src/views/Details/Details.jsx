@@ -1,15 +1,17 @@
 import React, { useContext, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { Favourite, Layout, Loader } from 'src/components';
 import { AppContext } from 'src/providers';
 import { GetPokemonDetails } from 'src/services/data';
+import back from 'src/assets/back.svg';
 
 import { Details as S } from './styles';
 
 const Details = () => {
   const { data, setData } = useContext(AppContext);
   const params = useParams();
+  const history = useNavigate();
 
   useEffect(() => {
     const getPokemonDetails = async () => {
@@ -35,7 +37,7 @@ const Details = () => {
 
     if (handleFavourite(_favourite)) {
       const removeFavourite = data?.favourites.filter(
-        el => el.name !== el.name,
+        el => el.name !== _favourite.name,
       );
 
       return localStorage.setItem('pokemons', JSON.stringify(removeFavourite));
@@ -46,6 +48,10 @@ const Details = () => {
     localStorage.setItem('pokemons', JSON.stringify(allFavourites));
   };
 
+  const handleBack = () => {
+    history(-1);
+  };
+
   return (
     <Layout>
       {data.loading && <Loader />}
@@ -53,6 +59,9 @@ const Details = () => {
         <S.Container>
           <S.Content>
             <S.Wrapper>
+              <S.Back onClick={handleBack}>
+                <img src={back} alt="back" />
+              </S.Back>
               <S.Card center>
                 <div>
                   <S.Label>{data?.details?.name}</S.Label>

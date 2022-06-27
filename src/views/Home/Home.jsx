@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { Grid } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 import { Layout, Loader, Pagination, PokemonCard } from 'src/components';
 import { AppContext } from 'src/providers';
@@ -36,6 +37,15 @@ const Home = () => {
         {data.loading && <Loader />}
         {!data.loading && data.types && (
           <S.Container>
+            <Link
+              to={{
+                pathname: '/favourites',
+              }}
+            >
+              <S.ContentLabel>
+                <S.Label>List of Favourites</S.Label>
+              </S.ContentLabel>
+            </Link>
             <Grid container spacing={4}>
               {data.types.map(pokemon => (
                 <PokemonCard

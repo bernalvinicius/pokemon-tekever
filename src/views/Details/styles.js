@@ -59,4 +59,8 @@ export const Details = {
     width: 200px;
     padding: ${({ stats }) => (!stats ? '10px 0' : '5px 0')};
   `,
+
+  Back: styled.div`
+    width: 200px;
+  `,
 };
