@@ -88,6 +88,22 @@ The jsconfig.json file specifies root files and options for the features provide
 
 ESLint is designed to be configurable, you can disable all rules and run with just basic syntax validation, or mix and match grouped rules and custom rules. We configure ESLint through the .eslintrc.js file, it specifies all the configuration information that we want to apply. For more informations: [ESLint Documentation](https://eslint.org/docs/user-guide/configuring). You must also install the extension of [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
+After creating all these files and extensions, the following dependencies were installed:
+
+- [React](https://reactjs.org/)
+- [React-Router-Dom](https://reactrouter.com/)
+- [ESlint](https://eslint.org/)
+- [eslint-config-airbnb](https://github.com/airbnb/javascript)
+- [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier#readme)
+- [eslint-import-resolver-alias](https://github.com/johvin/eslint-import-resolver-alias#readme)
+- [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import)
+- [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#readme)
+- [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier#readme)
+- [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)
+- [eslint-plugin-react-hooks](https://github.com/facebook/react)
+- [Prettier](https://github.com/prettier/prettier)
+- [prop-types](https://github.com/facebook/prop-types)
+
 ## Contacts
 
 Email-me: vinicius.bernal@agap2.pt
