@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { getPokemons, getPokeSprites } from './api';
+import { getPokemons, getPokeSprites, getPokemonDetails } from './api';
 
 export const GetAllPokemons = async url => {
   const { data } = await getPokemons(url);
@@ -12,4 +12,10 @@ export const GetAllPokemons = async url => {
   );
 
   return { data: data, pokemon: pokemon };
+};
+
+export const GetPokemonDetails = async pokemon => {
+  const data = await getPokemonDetails(pokemon);
+
+  return data;
 };

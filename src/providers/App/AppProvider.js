@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 import { AppContext } from './Context';
 
 const defaultState = {
-  favorite: '',
+  favourites: JSON.parse(localStorage.getItem('pokemons')) || [],
   pokemons: [],
   types: [],
+  details: [],
   loading: false,
 };
 
