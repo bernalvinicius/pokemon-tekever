@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# Pokémon - Tekever
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Preview-Screens](https://i.imgur.com/fXL36vT.jpg)
 
-## Available Scripts
+## Why?
 
-In the project directory, you can run:
+This project is part of Tekever's selection process for Dev ReactJS.
 
-### `npm start`
+The application basically consists of a list of pokémons, from the list the user can consult specific pokémon details and also add it to the favorites list.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+As much as possible I tried to build a user-friendly and functional interface.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## A few notes about this App
 
-### `npm test`
+**1** - It was built on the basis of `create-react-app`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**2** - For this challenge I used the `Material-UI`, which brings all the features of Material Design to React projects.
 
-### `npm run build`
+**3** - Application state management is done with `Context API`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**4** - Local storage is used to save the user's favorite pokemons.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**5** - As few pages were created, routing is done with `react-router-dom`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Functionalities
 
-### `npm run eject`
+- Home Page:
+  - List of pokemons, the list brings 20 pokemons, if the user wants to see others, he can use the pagination system.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Details:
+  - On the home page, the user can select a pokemon and is directed to the page to consult their characteristics in detail. At this point, the user can favorite their pokémon. When it does this, a list is created in the local storage with this information.
+  
+- Favourites:
+  - It's like the home page, which brings up a list of pokemons, but at the moment it only brings up the pokemons that the user has favorited on the details page.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Starting the Application
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To run this project in development mode, you will need a basic environment to run a React application, which you can find [here.](https://reactjs.org/docs/getting-started.html)
 
-## Learn More
+### Installing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Cloning this repository**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+$ https://github.com/bernalvinicius/pokemon-tekever
+$ cd pokemon-tekever
+```
 
-### Code Splitting
+**Installing dependencies**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+$ yarn
+```
 
-### Analyzing the Bundle Size
+_ou_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+$ npm install
+```
 
-### Making a Progressive Web App
+**Run Application**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+With all dependencies installed and the environment configured correctly, you can now run the project.
 
-### Advanced Configuration
+```
+$ npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Built with
 
-### Deployment
+**Ps:** Below I will talk about some plugins, all of them in [Visual Studio Code](https://code.visualstudio.com/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+After generating a new project with 'npx create-react-app', I created some extra files to leave the application pre-configured at compilation and indentation levels.
 
-### `npm run build` fails to minify
+The following files were created: (in the project root):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **.prettierrc**
+
+For this file to be valid, the extension must be added [Prettier – Code formatter](https://prettier.io/). Prettier is nothing more than a code formatter, it ensures that all emitted code conforms to a consistent style. For example, you can write a line of code that gets too long, you can limit the maximum line length to 60 characters, and then Prettier will do the work of organizing the code for you. With the extension installed and the file created, you can start configuring the file. For more informations: [Prettier](https://prettier.io/).
+
+- **jsconfig.json**
+
+The jsconfig.json file specifies root files and options for the features provided by the JavaScript service. For example, by default the JavaScript language service will parse and provide IntelliSense for all files in your JavaScript project. If you want to specify which files to exclude or include to provide proper IntelliSense, you can use a property in jsconfig.json to do so. For more informations: [jsconfig.json](https://code.visualstudio.com/docs/languages/jsconfig).
+
+- **.eslintrc.js**
+
+ESLint is designed to be configurable, you can disable all rules and run with just basic syntax validation, or mix and match grouped rules and custom rules. We configure ESLint through the .eslintrc.js file, it specifies all the configuration information that we want to apply. For more informations: [ESLint Documentation](https://eslint.org/docs/user-guide/configuring). You must also install the extension of [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+
+## Contacts
+
+Email-me: vinicius.bernal@agap2.pt
+
+Thank you

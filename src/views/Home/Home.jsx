@@ -46,6 +46,9 @@ const Home = () => {
                 <S.Label>List of Favourites</S.Label>
               </S.ContentLabel>
             </Link>
+            <S.ContentAll>
+              <S.Label>all pokemons</S.Label>
+            </S.ContentAll>
             <Grid container spacing={4}>
               {data.types.map(pokemon => (
                 <PokemonCard

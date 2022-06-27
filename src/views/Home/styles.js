@@ -22,8 +22,14 @@ export const Home = {
   ContentLabel: styled.div`
     margin: 50px 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     cursor: pointer;
+  `,
+
+  ContentAll: styled.div`
+    margin: 50px 0;
+    display: flex;
+    justify-content: flex-start;
   `,
 
   Label: styled.span`
@@ -33,6 +39,6 @@ export const Home = {
     text-align: initial;
     padding-left: 20px;
     text-transform: capitalize;
-    text-decocartion: underline;
+    text-decoration: underline;
   `,
 };
