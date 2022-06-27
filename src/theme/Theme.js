@@ -7,6 +7,9 @@ import { breakpoints } from 'src/utils/breakpoints';
 
 import { defaultTheme } from './defaultTheme';
 
+/**
+ * Custom theme with specific colors and breakpoints
+ */
 const theme = createTheme({
   breakpoints: {
     values: {

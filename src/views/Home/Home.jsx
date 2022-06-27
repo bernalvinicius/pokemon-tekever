@@ -11,6 +11,9 @@ import { Home as S } from './styles';
 const Home = () => {
   const { data, setData } = useContext(AppContext);
 
+  /**
+   * Getting the list of pokemons with name and image
+   */
   useEffect(() => {
     const getPokemons = async () => {
       setData(prev => ({ ...prev, loading: true }));

@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import { PokemonCard as S } from './styles';
 
 const PokemonCard = ({ name, cover }) => {
+  /**
+   * Rendering the list of pokemons with name and image
+   */
   return (
     <S.Grid item lg={3} md={4} sm={6} xs={12}>
       <Link

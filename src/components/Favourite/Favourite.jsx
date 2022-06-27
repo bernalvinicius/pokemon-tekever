@@ -10,6 +10,10 @@ const Favourite = () => {
   const [isFavourite, setIsFavourite] = useState(false);
   const params = useParams();
 
+  /**
+   * Checking if the pokemon is in the favorites list or not,
+   * according to this information the icon has its color determined
+   */
   useEffect(() => {
     const pokemon = params.name;
 

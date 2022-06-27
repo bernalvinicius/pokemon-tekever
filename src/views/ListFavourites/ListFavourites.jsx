@@ -12,10 +12,16 @@ const ListFavourites = () => {
   const { data } = useContext(AppContext);
   const history = useNavigate();
 
+  /**
+   * Back to the previous page
+   */
   const handleBack = () => {
     history(-1);
   };
 
+  /**
+   * Rendering the list of pokemons from local storage with name and image
+   */
   return (
     <Layout>
       <S.Content>

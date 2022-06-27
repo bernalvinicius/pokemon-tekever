@@ -13,6 +13,9 @@ const Details = () => {
   const params = useParams();
   const history = useNavigate();
 
+  /**
+   * Getting the list of pokemons with details
+   */
   useEffect(() => {
     const getPokemonDetails = async () => {
       setData(prev => ({ ...prev, loading: true }));
@@ -28,14 +31,24 @@ const Details = () => {
     getPokemonDetails();
   }, []);
 
+  /**
+   * Function to check if the pokemon already in the favorites list
+   */
   const handleFavourite = pokemon => {
     return data?.favourites?.some(favourite => favourite.name === pokemon.name);
   };
 
+  /**
+   * Function to save de pokemon in the local storage as favourite
+   */
   const onFavourite = (pokemon, image) => {
     const _favourite = { name: pokemon, sprite: image };
 
     if (handleFavourite(_favourite)) {
+      /**
+       * Removing it from the favorites list if the user wishes.
+       * If the list is empty then the local storage is an empty array.
+       */
       const removeFavourite = data?.favourites.filter(
         el => el.name !== _favourite.name,
       );
@@ -45,13 +58,22 @@ const Details = () => {
 
     const allFavourites = [...data.favourites, _favourite];
 
+    /**
+     * Saving the pokemon on local storage
+     */
     localStorage.setItem('pokemons', JSON.stringify(allFavourites));
   };
 
+  /**
+   * Back to the previous page
+   */
   const handleBack = () => {
     history(-1);
   };
 
+  /**
+   * Rendering the list of pokemons with many characteristics
+   */
   return (
     <Layout>
       {data.loading && <Loader />}
